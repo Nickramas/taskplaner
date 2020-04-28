@@ -51,8 +51,8 @@ const tasksPerDayChart = new Chart(tasksPerDayChartContext, {
 });
 
 function updateTasksPerDayChart(tasklist) {
-  days = [];
-  tasksPerDay = [];
+  days = []; // stores the dates without repeats
+  tasksPerDay = []; // stores the number of tasks per day at the same index as days
   for (task of tasklist) {
     if (!days.includes(task.deadline)) {
       days.push(task.deadline);
