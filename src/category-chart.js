@@ -1,7 +1,7 @@
 const categoryChartCanvas = document.getElementById('category-chart');
 const categoryChartContext = categoryChartCanvas.getContext('2d');
 
-let percentageShareOfCategories = []; // 0: Schule, 1: Arbeit, 3: Privat
+let percentageShareOfCategories = []; // 0: Schule, 1: Arbeit, 2: Privat
 
 const categoryChart = new Chart(categoryChartContext, {
   type: 'pie',
