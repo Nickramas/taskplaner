@@ -3,8 +3,8 @@ const deleteAllTasksButton = document.getElementById('delete-all-tasks-button');
 const errorMessage = document.getElementById('error-message');
 const tasklist = new Tasklist();
 
-// loading tasklist from local stoage
 function init() {
+  // loading tasklist from local stoage
   const tasklistFromLocalStorage = getTasklistFromCookies();
 
   if (
@@ -59,7 +59,7 @@ function deleteAllTasksFromList() {
 function updateDOM() {
   const table = document.getElementById('task-table');
 
-  let taskListHTML = ``;
+  table.innerHTML = '';
   for (task of tasklist.get()) {
     const tr = document.createElement('tr');
     const td1 = document.createElement('td');

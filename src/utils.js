@@ -20,8 +20,9 @@ function getTasklistFromCookies() {
     return cookie.includes('tasklist=');
   });
   if (tasklist < 0) {
+    // if "tasklist=" is not included, findIndex() returns -1
     return;
   }
-  tasklist = cookies[tasklist].slice(9); // delete "tasklist=" at the beginning and ";" at the end
+  tasklist = cookies[tasklist].slice(9); // delete "tasklist=" at the beginning
   return JSON.parse(tasklist);
 }
