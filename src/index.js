@@ -2,9 +2,6 @@ const addTaskButton = document.getElementById('add-task-button');
 const deleteAllTasksButton = document.getElementById('delete-all-tasks-button');
 const tasklist = new Tasklist();
 
-addTaskButton.addEventListener('click', addTaskToList);
-deleteAllTasksButton.addEventListener('click', deleteAllTasksFromList);
-
 function init() {
   const tasklistFromLocalStorage = JSON.parse(getTasklistFromLocalStorage());
 
@@ -50,3 +47,5 @@ function updateDOM() {
 }
 
 init();
+addTaskButton.addEventListener('click', addTaskToList);
+deleteAllTasksButton.addEventListener('click', deleteAllTasksFromList);
