@@ -1,7 +1,8 @@
 const tasksPerDayChartCanvas = document.getElementById('tasks-per-day-chart');
 const tasksPerDayChartContext = tasksPerDayChartCanvas.getContext('2d');
 let days = [];
-let data = [];
+let tasksPerDay = [];
+
 const tasksPerDayChart = new Chart(tasksPerDayChartContext, {
   type: 'bar',
   borderWidth: 1,
@@ -9,7 +10,7 @@ const tasksPerDayChart = new Chart(tasksPerDayChartContext, {
     labels: days,
     datasets: [
       {
-        data: data,
+        data: tasksPerDay,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -30,6 +31,13 @@ const tasksPerDayChart = new Chart(tasksPerDayChartContext, {
     ],
   },
   options: {
+    title: {
+      display: true,
+      text: 'Aufgaben pro Tag',
+    },
+    legend: {
+      display: false,
+    },
     scales: {
       yAxes: [
         {
@@ -44,19 +52,19 @@ const tasksPerDayChart = new Chart(tasksPerDayChartContext, {
 
 function updateTasksPerDayChart(tasklist) {
   days = [];
-  data = [];
+  tasksPerDay = [];
   for (task of tasklist) {
     if (!days.includes(task.deadline)) {
       days.push(task.deadline);
-      data.push(1);
+      tasksPerDay.push(1);
     } else {
       dataIndex = days.findIndex((day) => {
         return day === task.deadline;
       });
-      data[dataIndex]++;
+      tasksPerDay[dataIndex]++;
     }
   }
-  tasksPerDayChart.data.datasets[0].data = data;
+  tasksPerDayChart.data.datasets[0].data = tasksPerDay;
   tasksPerDayChart.data.labels = days;
   tasksPerDayChart.update();
 }
