@@ -10,10 +10,18 @@ function getTaskDeadlineFromDOM() {
   return document.getElementById('date-task-deadline').value;
 }
 
-function saveTasklistInLocalStorage(tasklist) {
-  window.localStorage.setItem('tasklist', JSON.stringify(tasklist));
+function saveTasklistToCookies(tasklist) {
+  document.cookie = 'tasklist=' + JSON.stringify(tasklist);
 }
 
-function getTasklistFromLocalStorage() {
-  return window.localStorage.getItem('tasklist');
+function getTasklistFromCookies() {
+  const cookies = document.cookie.split(';');
+  let tasklist = cookies.findIndex((cookie) => {
+    return cookie.includes('tasklist=');
+  });
+  if (tasklist < 0) {
+    return;
+  }
+  tasklist = cookies[tasklist].slice(9); // delete "tasklist=" at the beginning and ";" at the end
+  return JSON.parse(tasklist);
 }

@@ -5,7 +5,7 @@ const tasklist = new Tasklist();
 
 // loading tasklist from local stoage
 function init() {
-  const tasklistFromLocalStorage = JSON.parse(getTasklistFromLocalStorage());
+  const tasklistFromLocalStorage = getTasklistFromCookies();
 
   if (
     tasklistFromLocalStorage !== undefined &&
@@ -30,7 +30,7 @@ function addTaskToList() {
     tasklist.add(task);
     tasklist.sort();
     updateDOM();
-    saveTasklistInLocalStorage(tasklist.get());
+    saveTasklistToCookies(tasklist.get());
     updateTasksPerDayChart(tasklist.get());
     updateCategoryChart(tasklist.get());
   } catch (error) {
@@ -50,7 +50,7 @@ function addTaskToList() {
 
 function deleteAllTasksFromList() {
   tasklist.clear();
-  saveTasklistInLocalStorage(tasklist.get());
+  saveTasklistToCookies(tasklist.get());
   updateDOM();
   updateTasksPerDayChart(tasklist.get());
   updateCategoryChart(tasklist.get());
