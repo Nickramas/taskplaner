@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskplaner</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="headline">Meine Todo-Liste</h1>
+    </header>
+    <main>
+      <div class="add-task-form">
+        <label for="task">Aufgabe</label>
+        <input type="text" name="task-description" id="text-task-description" />
+        <label for="deadline">Erledigt bis</label>
+        <input type="date" name="deadline" id="date-task-deadline" />
+        <label for="caterory">Katerorie</label>
+        <select type="text" name="caterory" id="select-task-category">
+          <option value="Schule">Schule</option>
+          <option value="Arbeit">Arbeit</option>
+          <option value="Privat">Privat</option>
+        </select>
+        <button id="add-task-button">Hinzufügen</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Aufgabe</th>
+            <th>bis</th>
+            <th>Kategorie</th>
+          </tr>
+        </thead>
+        <tbody id="task-table"></tbody>
+      </table>
+    </main>
+    <footer>
+      <img src="images/logo.png" alt="OSZ IMT Logo" />
+    </footer>
+    <script src="src/utils.js"></script>
+    <script src="src/task.js"></script>
+    <script src="src/tasklist.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
