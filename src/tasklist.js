@@ -18,4 +18,10 @@ class Tasklist {
   clear() {
     this.tasklist = [];
   }
+
+  sort() {
+    this.tasklist.sort((a, b) => {
+      return a.deadline > b.deadline ? 1 : -1;
+    });
+  }
 }

@@ -12,6 +12,7 @@ function init() {
   ) {
     tasklist.set(tasklistFromLocalStorage);
     updateDOM();
+    updateTasksPerDayChart(tasklist.get());
   }
 }
 
@@ -21,14 +22,17 @@ function addTaskToList() {
   const category = getTaskCategoryFromDOM();
   const task = new Task(description, deadline, category);
   tasklist.add(task);
+  tasklist.sort();
   updateDOM();
   saveTasklistInLocalStorage(tasklist.get());
+  updateTasksPerDayChart(tasklist.get());
 }
 
 function deleteAllTasksFromList() {
   tasklist.clear();
   saveTasklistInLocalStorage(tasklist.get());
   updateDOM();
+  updateTasksPerDayChart(tasklist.get());
 }
 
 function updateDOM() {
