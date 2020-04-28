@@ -1,4 +1,4 @@
-class TaskList {
+class Tasklist {
   constructor() {
     this.tasklist = [];
   }
@@ -9,5 +9,13 @@ class TaskList {
 
   get() {
     return this.tasklist;
+  }
+
+  set(tasklist) {
+    this.tasklist = tasklist;
+  }
+
+  clear() {
+    this.tasklist = [];
   }
 }

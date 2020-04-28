@@ -38,15 +38,6 @@ main select {
   border-radius: 5px;
 }
 
-main button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: #3636e9;
-  color: white;
-  transition: 200ms;
-}
-
 main label {
   width: 100%;
   color: #6e6e6e;
@@ -89,4 +80,22 @@ footer {
 footer img {
   padding: 5px;
   height: 40px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+
+  transition: 200ms;
+}
+
+.btn-primary {
+  background-color: #3636e9;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #eee;
+  color: black;
 }
