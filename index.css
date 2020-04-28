@@ -42,7 +42,7 @@ main button {
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background-color: rgb(54, 54, 233);
+  background-color: #3636e9;
   color: white;
   transition: 200ms;
 }
@@ -64,12 +64,16 @@ main table {
 main table td,
 main table th {
   padding: 5px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   text-align: left;
 }
 
 main table thead th {
-  background-color: #eee;
+  background-color: #5570bb7a;
+}
+
+main table tbody tr:nth-child(even) {
+  background-color: #5570bb25;
 }
 
 /* footer */
