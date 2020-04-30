@@ -22,7 +22,8 @@ function init() {
 function addTaskToList() {
   resetAllBorderColors();
   const description = getTaskDescriptionFromDOM();
-  const deadline = getTaskDeadlineFromDOM();
+  const date = new Date(getTaskDeadlineFromDOM());
+  const deadline = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
   const category = getTaskCategoryFromDOM();
 
   try {
