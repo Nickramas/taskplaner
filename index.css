@@ -36,6 +36,7 @@ main select {
   padding: 5px;
   border: 1px solid grey;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 main label {
@@ -85,7 +86,6 @@ footer img {
   padding: 10px;
   border: none;
   border-radius: 8px;
-
   transition: 200ms;
 }
 
